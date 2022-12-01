@@ -31,7 +31,7 @@ public class DeliveryCardFormTest {
         form.$("[data-test-id=phone] input").setValue("+79999999999");
         form.$("[data-test-id=agreement]").click();
         form.$(".button").click();
-        $(".notification__title").shouldBe(visible, Duration.ofSeconds(15));
-        $(".notification__title").shouldHave(exactText("Успешно!"));
+        $("[data-test-id=notification]").shouldBe(visible, Duration.ofSeconds(15));
+        $("[data-test-id=notification]").shouldHave(exactText("Успешно! " + "Встреча успешно забронирована на " + date));
     }
 }
